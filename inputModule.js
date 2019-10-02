@@ -1,6 +1,7 @@
 // get the users name:
 
 var inquirer = require("inquirer");
+let apiModule = require("./apiModule.js")
 
 function getUserQuery() {
 
@@ -63,14 +64,10 @@ function getUserQuery() {
 
 
 function sendData(type, query) {
-
-  module.exports = {
-  type: type,
-  query: query
-  }
-
 //just sent data back?
 console.log("just sent this info back in exports: type = "+type+", and query = "+query)
+
+console.log(apiModule.data);
 }
 
 
