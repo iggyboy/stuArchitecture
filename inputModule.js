@@ -1,27 +1,80 @@
 // get the users name:
 
-inquirer.prompt([
+var inquirer = require("inquirer");
+
+function getUserQuery() {
+
+  inquirer.prompt([
+    // Here we create a basic text prompt.
     {
       type: "input",
-      message: "For your permanent record..What is your name?",
-      name: "username"
-    }
+      message: "Remember to start request with \'show\' or \'actor\' and then the name you are seeking.\n\nEnter Request Here:",
+      name: "userQuery"
+    },
   ])
     .then(function (inquirerResponse) {
-      if (inquirerResponse.username === "") {
-        console.log("\n" + chalk.bold.red.bgYellowBright("Sorry, due to the requirements of your internet provider to report your every thought,"));
-        console.log(chalk.bold.red.bgYellowBright(" we cannot accept requests from nameless people. Please abandon all hopes for anonymity, and try again\n"));
-      }
-      else {
-        userName = inquirerResponse.username;
-        userName = userName.toLowerCase();
-        userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+      if (inquirerResponse.userQuery === "") {
 
-  
-        getUserQuery(inquirerResponse.username);
+        console.log("Nope, that's not a good request.. Try typing \"show Andy Griffit\" or something like that..")
+
+        getUserQuery();
+      } else {
+        console.log("inquirerResponse", inquirerResponse);
+        var thisQuery = inquirerResponse.userQuery;
+        console.log("thisQuery = ", thisQuery);
+
+
+
+        if (thisQuery.split(" ")[0]) {
+          var qtype = thisQuery.split(" ")[0];
+        }
+        if (thisQuery.split(" ")[1]) {
+          var thisSearch = thisQuery.split(" ").slice(1).join(" ");
+        }
+
+
+        switch (qtype) {
+          case "show":
+            // show lookup function
+            console.log("qtype = ", qtype);
+            console.log("thisSearch = ", thisSearch);
+
+            sendData(qtype, thisSearch);
+
+            break;
+          case "actor":
+            // actor lookup function
+            console.log("qtype = ", qtype);
+            console.log("thisSearch = ", thisSearch);
+            sendData(qtype, thisSearch);
+            break;
+          default:
+            console.log("OOPS, try again, but start with \'show\' or \'actor\'")
+            console.log("qtype = ", qtype);
+            console.log("thisSearch = ", thisSearch);
+
+            getUserQuery()
+          //getUserQuery();
+        }
       }
     });
-  
+}
+
+
+
+function sendData(type, query) {
+
+  module.exports = {
+  type: type,
+  query: query
+  }
+
+//just sent data back?
+console.log("just sent this info back in exports: type = "+type+", and query = "+query)
+}
+
+
+getUserQuery();
 
 
 
@@ -38,8 +91,13 @@ inquirer.prompt([
 
 
 
-    
-  
+
+
+
+
+
+
+
 //   function hint() {
 //     var hints = chalk.bold.black.bgWhite("Here's what you can enter, and how I will respond!:\n\n");
 //     hints += chalk.bold.black.bgWhite("Enter \"concert=Rolling Stones\"  -and I will find upcoming tour dates for you!\n");
