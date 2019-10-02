@@ -1,0 +1,34 @@
+Results = toString(data)
+-------------------------------------------------------------------Search type: show Query= titanic
+-------------------------------------------------------------------Results = toString(data)
+-------------------------------------------------------------------Search type: show Query= titanic
+-------------------------------------------------------------------Results = [object Undefined]
+-------------------------------------------------------------------Search type: show,  Query: titanic
+-------------------------------------------------------------------Results = [object Undefined]
+-------------------------------------------------------------------
+
+Search type: show,  Query: titanic
+-------------------------------------------------------------------Results = [object Undefined]
+-------------------------------------------------------------------
+
+
+
+Search type: show,  Query: titanic
+-------------------------------------------------------------------
+Results = [object Object]
+-------------------------------------------------------------------
+
+
+
+Search type: show,  Query: titanic
+-------------------------------------------------------------------
+Results = {"title":"Titanic","genres":[],"rating":{"average":6.8},"network":"ITV","summary":"<p><b>Titanic </b>is a four part serial created by BAFTA-winning producer Nigel Stafford-Clark and written by Oscar and Emmy winner Julian Fellowes to mark the hundredth anniversary of the world's most famous maritime disaster in April 1912. It sets out to tell the story not just of a single ship, but of an entire society--one that was heading towards its own nemesis in the shape of the First World War as carelessly as <i>Titanic </i>towards the iceberg.</p>"}
+-------------------------------------------------------------------
+
+
+
+Search type: actor,  Query: tom cruise
+-------------------------------------------------------------------
+Results = {"name":"Tom Cruise","birthday":"1962-07-03","gender":"Male","country":"United States","url":"http://www.tvmaze.com/people/67590/tom-cruise"}
+-------------------------------------------------------------------
+
