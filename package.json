@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/iggyboy/stuArchitecture#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "inquirer": "^7.0.0"
   }

@@ -1,7 +1,9 @@
 // get the users name:
 
 var inquirer = require("inquirer");
-let apiModule = require("./apiModule.js")
+var fs = require("fs");
+var results = require("./apiModule.js");
+
 
 function getUserQuery() {
 
@@ -58,16 +60,30 @@ function getUserQuery() {
           //getUserQuery();
         }
       }
-    });
+    }
+    
+    );
 }
 
 
 
 function sendData(type, query) {
-//just sent data back?
-console.log("just sent this info back in exports: type = "+type+", and query = "+query)
 
-console.log(apiModule.data);
+  fs.appendFile('log.txt', "\n\nSearch type: "+type+",  Query: "+query+"\n-------------------------------------------------------------------\n", function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+  });
+
+
+
+
+
+console.log("Logged this search: Type: "+type+", and Query: "+query);
+
+var person1 = new results(type,query);
+
+//just sent data back?
+
 }
 
 
