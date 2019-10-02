@@ -4,6 +4,7 @@ var inquirer = require("inquirer");
 var fs = require("fs");
 var results = require("./apiModule.js");
 
+
 function getUserQuery() {
 
   inquirer.prompt([
@@ -67,7 +68,6 @@ function getUserQuery() {
 
 
 function sendData(type, query) {
-
 
   fs.appendFile('log.txt', "\n\nSearch type: "+type+",  Query: "+query+"\n-------------------------------------------------------------------\n", function (err) {
     if (err) throw err;
